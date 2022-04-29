@@ -1,21 +1,19 @@
 <h1>Register</h1>
 
-<form action="/users" method="post">
-<ul>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <li>
-    <label for="username">Username:</label>
-    <input type="text" name="user[username]" id="">
-  </li>
-  <li>
-    <label for="email">Email:</label>
-    <input type="email" name="user[email]" id="">
-  </li>
-  <li>
-    <label for="password">Password:</label>
-    <input type="password" name="user[password]" id="">
-  </li>
-</ul>
-<input type="submit" value="Sign me">
-
-</form>
+<%= form_tag("/users") do %>
+  <ul>
+    <li>
+      <%= label_tag(:username, "Username:") %>
+      <%= text_field_tag(:username) %>
+    </li>
+    <li>
+      <%= label_tag(:email, "Email:") %>
+      <%= email_field_tag(:email) %>
+    </li>
+    <li>
+      <%= label_tag(:password, "Password:") %>
+      <%= password_field_tag(:password) %>
+    </li>
+  </ul>
+  <%= submit_tag("Sign In") %>
+<% end %>
