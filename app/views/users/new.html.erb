@@ -1,18 +1,18 @@
 <h1>Register</h1>
 
-<%= form_tag("/users") do %>
+<%= form_with model: @user do |form| %>
   <ul>
     <li>
-      <%= label_tag(:username, "Username:") %>
-      <%= text_field_tag(:username) %>
+      <%= form.label :username %>
+      <%= form.text_field :username %>
     </li>
     <li>
-      <%= label_tag(:email, "Email:") %>
-      <%= email_field_tag(:email) %>
+      <%= form.label :email %>
+      <%= form.email_field :email %>
     </li>
     <li>
-      <%= label_tag(:password, "Password:") %>
-      <%= password_field_tag(:password) %>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
     </li>
   </ul>
   <%= submit_tag("Sign In") %>
