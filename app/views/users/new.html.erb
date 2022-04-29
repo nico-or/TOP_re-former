@@ -16,4 +16,14 @@
     </li>
   </ul>
   <%= submit_tag("Sign In") %>
+
+  <% err_count = @user.errors.count %>
+  <% if err_count >= 1%>
+  <p>There was <%= err_count %> <%= 'error'.pluralize(err_count) %>:</p>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li> <%= error %></li>
+    <% end %>
+  </ul>
+  <% end %>
 <% end %>
