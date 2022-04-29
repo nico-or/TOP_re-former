@@ -5,15 +5,15 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <li>
     <label for="username">Username:</label>
-    <input type="text" name="username" id="">
+    <input type="text" name="user[username]" id="">
   </li>
   <li>
     <label for="email">Email:</label>
-    <input type="email" name="email" id="">
+    <input type="email" name="user[email]" id="">
   </li>
   <li>
     <label for="password">Password:</label>
-    <input type="password" name="password" id="">
+    <input type="password" name="user[password]" id="">
   </li>
 </ul>
 <input type="submit" value="Sign me">
